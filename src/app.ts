@@ -5,7 +5,9 @@ import errorHandler from 'errorhandler';
 import bodyParser from 'body-parser';
 import express, { Application } from 'express';
 import routes from './Http/Routes';
+import createConnection from './Infrastructure/Database';
 
+createConnection();
 dotenv.config();
 
 class App {

@@ -1,0 +1,13 @@
+{
+    "type": "postgres",
+    "host": "localhost",
+    "port": 5432,
+    "username": "postgres",
+    "password": "docker",
+    "database": "amz_microservice",
+    "entities": ["./src/Domain/*/Models/*.ts"],
+    "migrations": ["./src/Infrastructure/Database/migrations/*.ts"],
+    "cli": {
+        "migrationsDir": "./src/Infrastructure/Database/migrations"
+    }
+}
