@@ -1,20 +1,22 @@
 import { resolve } from 'path';
 import dotenv from 'dotenv';
+
 dotenv.config({ path: resolve(__dirname, '../.env') });
 
-interface expressInterface {
+interface ExpressInterface {
     port: number | string;
     ip: string;
 }
 
-interface environmentInterface {
+interface EnvironmentInterface {
     env: number | string;
-    dbDir: string | any;
+    jwt: string | any;
 }
 
 export default class Config {
-    express: expressInterface;
-    environment: environmentInterface;
+    express: ExpressInterface;
+
+    environment: EnvironmentInterface;
 
     constructor() {
         this.express = {
@@ -24,7 +26,7 @@ export default class Config {
 
         this.environment = {
             env: process.env.NODE_ENV || 'development',
-            dbDir: process.env.DB_DIR,
+            jwt: process.env.JWT_SECRET,
         };
     }
 }
